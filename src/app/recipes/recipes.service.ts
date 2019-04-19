@@ -8,7 +8,7 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 export class RecipesService {
   recipeSelected = new EventEmitter<Recipe>();
 
-  private recipes: Recipe[] = [
+  private recipesArr: Recipe[] = [
     new Recipe(
       'Crock Pot Roast',
       'Place beef roast in crock pot. Mix the dried mixes together in a bowl and sprinkle over the roast. Pour the water around the roast. Cook on low for 7-9 hours.',
@@ -60,7 +60,7 @@ export class RecipesService {
   constructor(private slService: ShoppingListService) {}
 
   getRecipes() {
-    return this.recipes.slice();
+    return this.recipesArr.slice();
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
